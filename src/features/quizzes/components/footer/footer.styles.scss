@@ -1,0 +1,37 @@
+@import '../../../../styles/variables.scss';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  background-color: $header-footer-background;
+  border-top: 15px solid;
+  border-image: linear-gradient(90deg, $first-gradient-color, $second-gradient-color);
+  border-image-slice: 1;
+}
+
+.social-navigation {
+  &__links {
+    display: flex;
+    list-style: none;
+  }
+
+  &__link a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+
+    & img {
+      width: 25px;
+      transition-duration: 0.3s;
+
+      &:hover {
+        filter: drop-shadow(0 0 0 $first-gradient-color);
+        transform: scale(1.3);
+      }
+    }
+  }
+}
+

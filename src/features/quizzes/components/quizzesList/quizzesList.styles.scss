@@ -1,0 +1,91 @@
+@import '../../../../styles/variables.scss';
+
+.quizzes {
+  width: 70%;
+  padding: 48px 0;
+  text-align: center;
+  margin: 0 auto;
+
+  &__lucky-btn {
+    display: inline-block;
+    width: 400px;
+    height: 50px;
+    border: 3px solid $first-gradient-color;
+    border-radius: 10px;
+    background: linear-gradient(90deg, $first-gradient-color, $second-gradient-color);
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: #740101;
+    padding-top: 9px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.quizz-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 250px;
+  height: 300px;
+  border: 2px solid $first-gradient-color;
+  border-radius: 10px;
+  margin: 20px;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+
+    & > .quizz-card__start-btn {
+      height: 10%;
+      padding: 5px;
+    }
+  }
+
+  &__title {
+    min-height: 15%;
+    text-align: center;
+    font-size: 25px;
+    color: $secondary-text-color;
+    background-color: rgba(0, 0, 0, 0.685);
+    padding: 5px;
+  }
+
+  &__start-btn {
+    height: 0%;
+    text-align: center;
+    border: none;
+    background-color: #c00202;
+    color: $main-text-color;
+    font-size: 17px;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background-color: $first-gradient-color;
+    }
+  }
+}
+
+
+@media (max-width: 700px) {
+  .quizzes {
+    &__lucky-btn {
+      width: 100%;
+    }
+  }
+}

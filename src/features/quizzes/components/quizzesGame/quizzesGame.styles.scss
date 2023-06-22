@@ -1,0 +1,79 @@
+@import '../../../../styles/variables.scss';
+
+.quizz-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 350px);
+  padding: 5%;
+
+  & span {
+    color: $secondary-text-color;
+  }
+
+  &__category {
+    font-size: 36px;
+    margin-bottom: 100px;
+  }
+
+  &__extra-info {
+    font-size: 20px;
+  }
+
+  &__question {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  &__btn-wrapper {
+    display: flex;
+  }
+
+  &__btn {
+    width: 200px;
+    height: 100px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    margin: 0 25px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &_true {
+      background: url('../../../../../public/images/quizzesGame/true.svg') green no-repeat center;
+    }
+
+    &_false {
+      background: url('../../../../../public/images/quizzesGame/false.svg') red no-repeat center;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .quizz-game {
+    justify-content: space-around;
+    align-items: center;
+
+    &__category {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    &__question {
+      min-height: 162px;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    &__btn {
+      width: 130px;
+      height: 86px;
+      background-size: contain;
+    }
+  }
+}

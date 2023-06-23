@@ -1,19 +1,8 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { QuizzesListProps, QuizDataForList } from '../../types';
 
 import './quizzesList.styles.scss';
-
-interface Quizz {
-  id: number;
-  title: string;
-  img: string;
-  url: string;
-}
-
-interface QuizzesListProps {
-  quizzesList: Quizz[];
-  fetchSelectedQuizzesData: (url: string) => void;
-}
 
 const QuizzesList: FC<QuizzesListProps> = ({ quizzesList, fetchSelectedQuizzesData }) => {
   return (
@@ -26,7 +15,7 @@ const QuizzesList: FC<QuizzesListProps> = ({ quizzesList, fetchSelectedQuizzesDa
         I'm lucky!
       </Link>
       <ul className="quizzes__list">
-        {quizzesList.map(({ id, title, img, url }: Quizz) => (
+        {quizzesList.map(({ id, title, img, url }: QuizDataForList) => (
           <li
             key={id}
             className="quizzes__item quizz-card"

@@ -1,9 +1,17 @@
-import { createStore, combineReducers, applyMiddleware, Store, AnyAction } from 'redux';
+import {
+  createStore,
+  combineReducers,
+  applyMiddleware,
+  Store,
+  AnyAction,
+  Reducer,
+  CombinedState,
+} from 'redux';
 import thunk, { ThunkMiddleware } from 'redux-thunk';
 import quizzesReducer from './features/quizzes/quizzes.reducer';
-import { RootState } from './features/quizzes/entities/interfaces';
+import { RootState, Action } from './features/quizzes/types';
 
-const rootReducer = combineReducers<RootState>({
+const rootReducer: Reducer<CombinedState<RootState>, Action> = combineReducers({
   quizzes: quizzesReducer,
 });
 

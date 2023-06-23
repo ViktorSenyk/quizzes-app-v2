@@ -1,9 +1,9 @@
+import { QuizzesState, Action } from './types/index';
 import {
   ADD_SELECTED_QUIZZ_TO_STORE,
   SET_CURRENT_GAME_RESULT,
   SET_STATISTIC_DATA,
 } from './quizzes.actions';
-import { QuizzesState, Action } from './entities/interfaces';
 
 const initialState: QuizzesState = {
   quizzesList: [
@@ -68,9 +68,9 @@ const initialState: QuizzesState = {
       url: 'https://opentdb.com/api.php?amount=10&category=18&type=boolean',
     },
   ],
-  selectedQuizzesData: [],
+  selectedQuizzesData: null,
   currentGameResult: null,
-  statisticData: [],
+  statisticData: null,
 };
 
 const quizzesReducer = (state: QuizzesState = initialState, action: Action) => {
@@ -78,7 +78,7 @@ const quizzesReducer = (state: QuizzesState = initialState, action: Action) => {
     case ADD_SELECTED_QUIZZ_TO_STORE:
       return {
         ...state,
-        selectedQuizzesData: action.payload.quizzData,
+        selectedQuizzesData: action.payload.quizzesData,
       };
     case SET_CURRENT_GAME_RESULT:
       return {
@@ -88,7 +88,9 @@ const quizzesReducer = (state: QuizzesState = initialState, action: Action) => {
     case SET_STATISTIC_DATA:
       return {
         ...state,
-        statisticData: [...state.statisticData, action.payload.result],
+        statisticData: state.statisticData
+          ? [...state.statisticData, action.payload.result]
+          : [action.payload.result],
       };
     default:
       return state;

@@ -1,24 +1,14 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { QuizzesStatisticProps, ResultData } from '../../types';
 
 import './quizzesStatistic.styles.scss';
-
-interface Statistic {
-  id: number;
-  category: string;
-  time: string;
-  scores: string;
-}
-
-interface QuizzesStatisticProps {
-  statisticData: Statistic[];
-}
 
 const QuizzesStatistic: FC<QuizzesStatisticProps> = ({ statisticData }) => {
   return (
     <section className="statistic">
       <h2 className="statistic__title">Statistic</h2>
-      {statisticData.length === 0 ? (
+      {!statisticData ? (
         <p className="statistic__empty">Empty...</p>
       ) : (
         <ul className="statistic__list">
@@ -28,7 +18,7 @@ const QuizzesStatistic: FC<QuizzesStatisticProps> = ({ statisticData }) => {
             <p>TIME</p>
             <p>SCORES</p>
           </li>
-          {statisticData.map(({ id, category, time, scores }, index: number) => (
+          {statisticData.map(({ id, category, time, scores }: ResultData, index: number) => (
             <li className="statistic__list-item" key={id}>
               <p>{index + 1}</p>
               <p>{category}</p>

@@ -1,4 +1,4 @@
-export const fetchSelectedQuizzes = (url: string) =>
+export const fetchSelectedQuizzes = (url: string): Promise<any> =>
   fetch(`${url}`)
     .then(res => {
       if (!res.ok) {
@@ -6,4 +6,4 @@ export const fetchSelectedQuizzes = (url: string) =>
       }
       return res.json();
     })
-    .catch(err => alert(err));
+    .catch((err: Error) => alert(err));

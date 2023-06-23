@@ -1,15 +1,9 @@
 import React, { FC, useState, useEffect } from 'react';
-import { QuizDataForGame, ResultData } from '../../entities/interfaces';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
+import { QuizzesGameProps, ResultData } from '../../types';
 
 import './quizzesGame.styles.scss';
-
-interface QuizzesGameProps {
-  selectedQuizzesData: QuizDataForGame[];
-  setCurrentGameResult: (result: ResultData) => void;
-  setStatisticData: (result: ResultData) => void;
-}
 
 const QuizzesGame: FC<QuizzesGameProps> = ({
   selectedQuizzesData,
@@ -38,6 +32,7 @@ const QuizzesGame: FC<QuizzesGameProps> = ({
   }, []);
 
   const quizzHandle = (selectedOption: string): void => {
+    if (!selectedQuizzesData) return;
     const { correct_answer } = selectedQuizzesData[currentQuestionIndex];
     const newValues: boolean[] = [...currentGameScores, correct_answer === selectedOption];
     setCurrentGameScores(newValues);
@@ -57,6 +52,7 @@ const QuizzesGame: FC<QuizzesGameProps> = ({
   };
 
   const textDecoder = (): string => {
+    if (!selectedQuizzesData) return '';
     const encodedText: string = selectedQuizzesData[currentQuestionIndex].question;
     const decodedText: HTMLTextAreaElement = document.createElement('textarea');
     decodedText.innerHTML = encodedText;

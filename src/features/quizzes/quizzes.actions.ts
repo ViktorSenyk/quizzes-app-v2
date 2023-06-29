@@ -1,7 +1,7 @@
 import { fetchSelectedQuizzes } from '../../gateways/quizzes/index';
 import { ThunkAction } from 'redux-thunk';
 import { Dispatch } from 'redux';
-import { QuizDataForGame, Action, ResultData, RootState } from './types/index';
+import { QuizDataForGame, Action, ResultData, RootState } from '../../types/index';
 
 export const ADD_SELECTED_QUIZZ_TO_STORE: string = 'QUIZZES/ADD_SELECTED_QUIZZ_TO_STORE';
 export const SET_CURRENT_GAME_RESULT: string = 'QUIZZES/SET_CURRENT_GAME_RESULT';

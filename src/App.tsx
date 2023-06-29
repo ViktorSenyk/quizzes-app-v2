@@ -8,7 +8,7 @@ import {
   setStatisticData,
 } from './features/quizzes/quizzes.actions';
 
-import { AppProps, RootState } from './features/quizzes/types';
+import { AppProps, RootState } from './types';
 
 import Header from './features/quizzes/components/header/index';
 import QuizzesList from './features/quizzes/components/quizzesList/index';

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { QuizzesStatisticProps, ResultData } from '../../types';
+import { QuizzesStatisticProps, ResultData } from '../../../../types';
 
 import './quizzesStatistic.styles.scss';
 

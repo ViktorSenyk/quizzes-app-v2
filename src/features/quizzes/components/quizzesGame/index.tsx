@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
-import { QuizzesGameProps, ResultData } from '../../types';
+import { QuizzesGameProps, ResultData } from '../../../../types';
 
 import './quizzesGame.styles.scss';
 

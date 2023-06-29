@@ -1,4 +1,4 @@
-import { RootState, QuizDataForList, QuizDataForGame, ResultData } from './types';
+import { RootState, QuizDataForList, QuizDataForGame, ResultData } from '../../types';
 
 export const quizzesListSelector = (state: RootState): QuizDataForList[] =>
   state.quizzes.quizzesList;

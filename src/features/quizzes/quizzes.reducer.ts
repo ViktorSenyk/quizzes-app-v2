@@ -1,4 +1,4 @@
-import { QuizzesState, Action } from './types/index';
+import { QuizzesState, Action } from '../../types/index';
 import {
   ADD_SELECTED_QUIZZ_TO_STORE,
   SET_CURRENT_GAME_RESULT,
